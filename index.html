@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="UbuntuCircle helps students find friends, mentors and campus communities.">
+  <title>UbuntuCircle | Your Campus. Your Community.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <header class="topbar">
+    <a class="brand" href="#" data-nav="home" aria-label="UbuntuCircle home">
+      <span class="brand-mark">U</span><span>ubuntu<span class="brand-light">circle</span></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#discover" data-nav="discover">Discover</a>
+      <a href="#communities" data-nav="communities">Communities</a>
+      <a href="#events" data-nav="events">Events</a>
+      <a href="#kindness" data-nav="kindness">Kindness</a>
+    </nav>
+    <div class="top-actions">
+      <button class="icon-btn" id="notificationBtn" aria-label="Notifications">♧<span class="notification-dot"></span></button>
+      <button class="profile-chip" id="profileBtn"><span class="avatar small" id="headerAvatar">S</span><span id="headerName">Guest</span><span>⌄</span></button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="homeView" class="view">
+      <section class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">A COMMUNITY THAT STARTS WITH YOU</span>
+          <h1>Find your people.<br><em>Find your place.</em></h1>
+          <p>Campus life is better when you don't have to figure it out alone. Meet people, find mentors and discover communities that make campus feel like home.</p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" id="getStartedBtn">Join the community <span>→</span></button>
+            <button class="btn btn-quiet" id="exploreBtn">Explore UbuntuCircle</button>
+          </div>
+          <div class="hero-proof"><div class="avatar-stack"><span>🌻</span><span>📚</span><span>🎧</span><span>💻</span></div><span><strong>A place for every interest.</strong><br>Start with one connection.</span></div>
+        </div>
+        <div class="hero-art" aria-label="Illustration of a connected student community">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="art-card art-card-one"><span>💬</span><b>Shared interests</b><small>Start a conversation</small></div>
+          <div class="art-card art-card-two"><span>🌱</span><b>Grow together</b><small>Build your community</small></div>
+          <div class="art-center"><div class="people-emoji">🧑🏽‍🤝‍🧑🏾</div><b>UbuntuCircle</b><small>Your campus. Your community.</small></div>
+          <div class="floating-dot dot-one">✦</div><div class="floating-dot dot-two">✳</div>
+        </div>
+      </section>
+
+      <section class="section intro-section">
+        <div class="section-heading"><span class="eyebrow">HOW IT WORKS</span><h2>Connection begins with a small step.</h2><p>Whether you're new on campus or ready to give back, there's a way to get involved.</p></div>
+        <div class="feature-grid">
+          <article class="feature-card"><div class="feature-icon peach">⌕</div><h3>Find your people</h3><p>Discover students who share your interests, ambitions and hobbies.</p></article>
+          <article class="feature-card"><div class="feature-icon mint">♧</div><h3>Find guidance</h3><p>Connect with mentors and senior students who can help you navigate campus life.</p></article>
+          <article class="feature-card"><div class="feature-icon lilac">♡</div><h3>Make belonging real</h3><p>Join events, clubs and kindness activities that bring people together.</p></article>
+        </div>
+      </section>
+      <section class="cta-band"><div><span class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</span><h2>You belong somewhere.</h2><p>Let's help you find it.</p></div><button class="btn btn-light" id="ctaJoinBtn">Create your profile →</button></section>
+    </section>
+
+    <section id="appView" class="view hidden">
+      <div class="app-shell">
+        <aside class="sidebar">
+          <div class="sidebar-label">YOUR SPACE</div>
+          <button class="side-link active" data-page="dashboard"><span>⌂</span> Overview</button>
+          <button class="side-link" data-page="discover"><span>⌕</span> Find your people</button>
+          <button class="side-link" data-page="mentors"><span>♧</span> MentorMatch</button>
+          <button class="side-link" data-page="study"><span>▤</span> Study together</button>
+          <button class="side-link" data-page="communities"><span>◉</span> Communities</button>
+          <button class="side-link" data-page="events"><span>▦</span> Campus events</button>
+          <button class="side-link" data-page="kindness"><span>♡</span> Kindness corner</button>
+          <button class="side-link" data-page="skills"><span>✧</span> Skill exchange</button>
+          <button class="side-link" data-page="ask"><span>?</span> Ask a senior</button>
+          <div class="sidebar-bottom"><div class="sidebar-label">YOUR ACCOUNT</div><button class="side-link" data-page="profile"><span>◎</span> My profile</button><button class="side-link" id="logoutBtn"><span>↪</span> Log out</button></div>
+        </aside>
+        <section class="workspace">
+          <div class="mobile-welcome"><span class="eyebrow">UBUNTUCIRCLE COMMUNITY</span><h1 id="mobilePageTitle">Your community awaits.</h1></div>
+          <div id="pageContent"></div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><a class="brand" href="#" data-nav="home"><span class="brand-mark">U</span><span>ubuntu<span class="brand-light">circle</span></span></a><span>Your campus. Your community.</span><span>Prototype demonstration · Built with HTML, CSS & JavaScript</span></footer>
+
+  <dialog id="authDialog" class="modal">
+    <form id="authForm" method="dialog">
+      <button type="button" class="modal-close" data-close="authDialog" aria-label="Close">×</button>
+      <span class="eyebrow">WELCOME TO UBUNTUCIRCLE</span>
+      <h2 id="authTitle">Create your space.</h2>
+      <p class="muted" id="authSubtitle">Tell us a little about yourself to get started.</p>
+      <label>Your name<input id="authName" required placeholder="e.g. Naledi M." maxlength="45"></label>
+      <label>Email address<input id="authEmail" type="email" required placeholder="you@example.com"></label>
+      <label>I am joining as
+        <select id="authRole"><option value="student">Student</option><option value="mentor">Mentor</option></select>
+      </label>
+      <label id="courseLabel">Course / area of study<input id="authCourse" placeholder="e.g. Cybersecurity"></label>
+      <label>Interests <small class="muted">(separate with commas)</small><input id="authInterests" placeholder="Technology, music, reading"></label>
+      <label>Password<input id="authPassword" type="password" required minlength="8" autocomplete="new-password" placeholder="At least 8 characters"></label>
+      <p id="authFeedback" class="tiny-note" role="status" aria-live="polite">Use your official BAC student email ending in @thuto.bac.ac.bw.</p>
+      <button class="btn btn-primary full" id="authSubmitBtn" type="submit">Create account →</button>
+      <button class="text-link auth-mode-toggle" id="authModeToggle" type="button">Already registered? Sign in</button>
+      <p class="tiny-note">Prototype note: account authentication and student profiles use Supabase. Other community features are still demonstration data stored in this browser.</p>
+    </form>
+  </dialog>
+
+  <dialog id="createDialog" class="modal">
+    <form id="createForm" method="dialog">
+      <button type="button" class="modal-close" data-close="createDialog" aria-label="Close">×</button>
+      <span class="eyebrow">MAKE SOMETHING HAPPEN</span><h2 id="createTitle">Create an event</h2>
+      <label>Title<input id="createName" required maxlength="70" placeholder="Give it a clear name"></label>
+      <label>Category<select id="createCategory"><option>Social</option><option>Academic</option><option>Technology</option><option>Volunteering</option><option>Sports</option><option>Arts & culture</option></select></label>
+      <label>Date<input id="createDate" type="date" required></label>
+      <label>Short description<textarea id="createDescription" required rows="3" maxlength="220" placeholder="What should people know?"></textarea></label>
+      <button class="btn btn-primary full" type="submit">Publish to prototype →</button>
+    </form>
+  </dialog>
+
+  <dialog id="messageDialog" class="modal compact-modal">
+    <button type="button" class="modal-close" data-close="messageDialog" aria-label="Close">×</button>
+    <span class="eyebrow">START WITH A HELLO</span><h2 id="messageTitle">Send a connection request</h2>
+    <p class="muted" id="messageDescription"></p>
+    <label>Optional note<textarea id="messageNote" rows="3" maxlength="180" placeholder="Hi! I noticed we both enjoy..."></textarea></label>
+    <button class="btn btn-primary full" id="sendConnectionBtn">Send request →</button>
+  </dialog>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
